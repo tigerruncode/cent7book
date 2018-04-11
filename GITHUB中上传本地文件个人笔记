@@ -1,0 +1,80 @@
+GITHUB中上传本地文件-个人笔记
+原创 2016年08月03日 18:25:57 711
+
+
+[plain] view plain copy
+Welcome to Git (version 1.8.3-preview20130601)  
+  
+  
+Run 'git help git' to display the help index.  
+Run 'git help <command>' to display help for specific commands.  
+  
+hello@HELLO-20160803 ~ (master)  
+$ git init  
+Reinitialized existing Git repository in C:/Users/hello/.git/  
+  
+hello@HELLO-20160803 ~ (master)  
+$ cd  C:/Users/hello/.git/test  
+sh.exe": cd: C:/Users/hello/.git/test: No such file or directory  
+  
+hello@HELLO-20160803 ~ (master)  
+$ cd c:/hellotest  
+  
+hello@HELLO-20160803 /c/hellotest  
+$ git init  
+Initialized empty Git repository in c:/hellotest/.git/  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git add .  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git commit -m 'test'  
+  
+*** Please tell me who you are.  
+  
+Run  
+  
+  git config --global user.email "you@example.com"  
+  git config --global user.name "Your Name"  
+  
+to set your account's default identity.  
+Omit --global to set the identity only in this repository.  
+  
+fatal: unable to auto-detect email address (got 'hello@hello-geobeans.(none)')  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ ssh -T git@github.com  
+The authenticity of host 'github.com (192.30.253.112)' can't be established.  
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.  
+Are you sure you want to continue connecting (yes/no)? yes  
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.  
+Hi githubAccount! You've successfully authenticated, but GitHub does not provide shell access.  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git config --global user.name "githubAccount"  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git config --global user.email "111111111111@qq.com"  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git commit -m 'test'  
+[master (root-commit) e2213e6] test  
+ 1 file changed, 1 insertion(+)  
+ create mode 100644 test.txt  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git remote add origin https://github.com/githubAccount/workspace  
+.git  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
+$ git push -u origin master  
+Username for 'https://github.com': githubAccount  
+Password for 'https://githubAccount@github.com':  
+Counting objects: 3, done.  
+Writing objects: 100% (3/3), 215 bytes | 0 bytes/s, done.  
+Total 3 (delta 0), reused 0 (delta 0)  
+To https://github.com/githubAccount/workspace.git  
+ * [new branch]      master -> master  
+Branch master set up to track remote branch master from origin.  
+  
+hello@HELLO-20160803 /c/hellotest (master)  
