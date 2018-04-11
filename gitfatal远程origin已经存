@@ -1,0 +1,20 @@
+git fatal: 远程 origin 已经存在。
+不小心将git远程地址配错了，再次配置提示以下错误：
+
+fatal: 远程 origin 已经存在。
+
+此时只需要将远程配置删除，重新添加即可；
+
+git remote rm origin
+
+git remote add origin https://github.com/***/WebCrawlers.git
+
+再次提交文件即可正常使用
+
+粗心造成的小错误，顺便说一下，如果git没有commit就执行push操作会出现以下错误
+
+fatal: unable to access 'https://github.com/***/WebCrawlers.git/': Empty reply from server
+
+解决：只需要先commit 在 push即可
+
+
